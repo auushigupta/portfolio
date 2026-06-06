@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Gupta | Systems & Quantitative Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        :root {
+            --bg-dark: #0a0f1d;
+            --panel-bg: #111a2e;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --text-bright: #f8fafc;
+            --text-normal: #94a3b8;
+            --border-line: #1e293b;
+            --glow-green: #10b981;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-normal);
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- HERO SECTION WITH IMAGE --- */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-bright);
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-normal);
+            margin-bottom: 30px;
+        }
+        
+        /* Profile Image Styling */
+        .profile-img-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-cyan);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+        }
+        .profile-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cta-links a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-bright);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-line);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-right: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta-links a:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+            transform: translateY(-2px);
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--text-bright);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::after {
+            content: '';
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--border-line), transparent);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .skills-group {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-line);
+            padding: 25px;
+            border-radius: 12px;
+        }
+        .pill-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .pill {
+            background: rgba(79, 172, 254, 0.08);
+            border: 1px solid rgba(79, 172, 254, 0.15);
+            color: #a3e635;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .showcase-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-line);
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .role-title {
+            font-size: 1.3rem;
+            color: var(--text-bright);
+            font-weight: 700;
+        }
+        .company-name {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+        }
+        .timeline {
+            color: var(--text-normal);
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 12px;
+            border-radius: 20px;
+        }
+        .sub-block {
+            margin-top: 20px;
+            border-left: 2px solid #27354f;
+            padding-left: 15px;
+        }
+        .block-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        .metrics-badge {
+            display: inline-flex;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--glow-green);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* --- CONTACT FORM STYLING --- */
+        .contact-form {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-line);
+            padding: 30px;
+            border-radius: 14px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-bright);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-line);
+            border-radius: 8px;
+            color: var(--text-bright);
+            font-size: 0.95rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent-cyan);
+            outline: none;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: var(--bg-dark);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .stat-box {
+            background: #111a2e;
+            border: 1px solid var(--border-line);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 1.8rem;
+            color: var(--text-bright);
+            font-weight: 800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-line);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- Hero Section with Avatar Slot -->
+        <header class="hero-container">
+            <div class="hero-content class="hero"">
+                <h1>Himanshu Gupta</h1>
+                <div class="tagline">Systems Engineer / Quant Infrastructure Developer</div>
+                <p>I build and scale low-latency backend architectures where processing overhead is measured in microseconds.</p>
+                <div class="cta-links">
+                    <a href="#contact">📩 Contact Me</a>
+                    <a href="#">💼 LinkedIn</a>
+                    <a href="#">💻 GitHub</a>
+                </div>
+            </div>
+            <!-- YAHA AAPNI PHOTO KA NAAM DALO (e.g., myphoto.jpg) -->
+            <div class="profile-img-box">
+                <img src="profile.jpeg" alt="Himanshu Gupta">
+            </div>
+        </header>
+
+        <!-- Technical Stack -->
+        <section>
+            <div class="section-title">Technical Arsenals</div>
+            <div class="skills-container">
+                <div class="skills-group">
+                    <h3>⚡ Systems & Backend Optimization</h3>
+                    <div class="pill-box">
+                        <span class="pill">Low-latency C++</span>
+                        <span class="pill">C</span>
+                        <span class="pill">Multithreading</span>
+                        <span class="pill">Concurrency</span>
+                        <span class="pill">Epoll</span>
+                    </div>
+                </div>
+                <div class="skills-group">
+                    <h3>🌐 Distributed Architecture</h3>
+                    <div class="pill-box">
+                        <span class="pill">Redis (Lua scripting)</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">Java</span>
+                        <span class="pill">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+            <div class="section-title">Production Deployments</div>
+            <div class="showcase-card">
+                <div class="card-top">
+                    <div>
+                        <div class="role-title">Software Engineer</div>
+                        <div class="company-name">Thunderstrike Quant Research LLP</div>
+                    </div>
+                    <span class="timeline">July 2025 - Present</span>
+                </div>
+                <div class="sub-block">
+                    <div class="block-tag">Core Infrastructure: Risk Management Systems</div>
+                    <p>Designed and scaled the company's real-time margin tracking engine utilizing an ultra-fast C++ kernel.</p>
+                    <div class="metrics-badge">⚡ Result: Sustained ~99% Capital Utilization</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: CONTACT FORM SECTION -->
+        <section id="contact">
+            <div class="section-title">Get In Touch</div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xoqgkeov" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>Designed for Scale & Speed • Himanshu Gupta 2026</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
